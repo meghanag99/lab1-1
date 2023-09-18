@@ -1,8 +1,8 @@
 ---
 title: "BSMM-lab-1"
 subtitle: "BSMM 8740 Fall 2023"
-author: "Add your name here"
-date: "Add the date here"
+author: "Meghana Ghanta"
+date: "18 September 2023"
 format: html
 editor: visual
 self-contained: true
@@ -32,11 +32,24 @@ The `Teams` dataset has \_\_\_ observations and \_\_\_ variables.
 
 ### Exercise 2
 
-...
+```{r}
+library(magrittr)
+mets <- Teams  |> 
+  dplyr::filter(teamID == "NYN")
+my_mets <- mets |>
+  dplyr::filter(yearID %in% 2004:2012)
+my_mets %>% 
+  dplyr::select(yearID,G,W,L)
+```
 
 ### Exercise 3
 
-...
+```{r}
+mets_ben <- Teams |>
+  dplyr::select(yearID, teamID, G, RA, RS=R) |>
+  dplyr::filter(teamID == "NYN" & yearID %in% 2004:2012)
+mets_ben
+```
 
 ### Exercise 4
 
