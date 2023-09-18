@@ -59,7 +59,7 @@ mets_ben <- mets_ben |>
 mets_ben
 
 mets_ben <- mets_ben |>
-  dplyr::mutate(W_hat = WPct*G)
+  dplyr::mutate(W_hat = WPct/G)
 mets_ben
 ```
 
@@ -71,11 +71,17 @@ mets_ben
 
 ### Exercise 6
 
-...
+```{r}
+dplyr::arrange(mets_ben, desc(W))
+```
 
 ### Exercise 7
 
-...
+```{r}
+mets_ben |>
+  dplyr::mutate(Diff = _) |>
+  dplyr::arrange(_)
+```
 
 ### Exercise 8
 
